@@ -17,6 +17,7 @@ format:
     theme: cosmo
     css: styles.css
     html-math-method: katex
-
+resources:
+  - CNAME
 
 
