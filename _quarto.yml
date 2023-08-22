@@ -4,12 +4,17 @@ project:
 website:
   title: "Polyclimate"
   site-url: "https://polyclimate.org"
+  open-graph: true
+  twitter-card:
+    card-style: summary
   search: false
   navbar:
     right:
       - about.qmd
       - icon: github
         href: https://github.com/polyclimate
+      - icon: rss
+        href: index.xml
       #- icon: twitter
       #  href: https://twitter.com
 format:
