@@ -15,4 +15,5 @@ about:
     #   href: https://linkedin.com
 ---
 
-About this blog
+A place to think about collaborative climate science.
+
