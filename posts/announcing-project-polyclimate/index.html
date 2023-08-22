@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Robert Gieseke">
+<meta name="dcterms.date" content="2023-08-22">
+<meta name="description" content="A place to think about collaborative climate science.">
+
+<title>Polyclimate - Announcing Project Polyclimate</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Polyclimate - Announcing Project Polyclimate">
+<meta property="og:description" content="A place to think about collaborative climate science.">
+<meta property="og:image" content="https://polyclimate.org/posts/announcing-project-polyclimate/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
+<meta property="og:site-name" content="Polyclimate">
+<meta name="twitter:title" content="Polyclimate - Announcing Project Polyclimate">
+<meta name="twitter:description" content="A place to think about collaborative climate science.">
+<meta name="twitter:image" content="https://polyclimate.org/posts/announcing-project-polyclimate/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Polyclimate</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/polyclimate" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Announcing Project Polyclimate</h1>
+                  <div>
+        <div class="description">
+          A place to think about collaborative climate science.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Polyclimate</div>
+                <div class="quarto-category">Polymath</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Robert Gieseke <a href="https://orcid.org/0000-0002-1236-5109" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 22, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><img src="duck.jpg" class="img-fluid" alt="Cover of Michael Nielsen's book Reinventing Discovery, a tree and three ducks in the background"></p>
+<p>It is 100 days until <a href="https://www.cop28.com/en/">COP28</a> in Dubai. The <a href="https://unfccc.int/topics/global-stocktake">Global Stocktake</a>, the process to assess progress towards the goals of the Paris Climate Change Agreement, is scheduled to take place every five years and for the first time during COP28.</p>
+<p>Some questions and indicators one might ask about during such a Global Stocktake, or in fact constantly, when thinking about climate change, could be:</p>
+<ul>
+<li>What are global emissions levels?</li>
+<li>How far are we from 1.5 or 2.0°C?</li>
+<li>How big is the remaining carbon budget?</li>
+<li>When adding together climate plans of countries (<a href="https://unfccc.int/NDCREG">NDCs</a>), where do we end up?</li>
+</ul>
+<p>When trying to look up an answer for questions like these, they can be surprisingly difficult to find given their importance for our common future. Of course answers exist, in academic publications, in reports like those from the <a href="https://www.ipcc.ch/">IPCC</a>, or in reports or websites from various governmental or non-governmental organizations. Few of them however are regularly updated and fully done reproducibly in the spirit of open science, where the latter would make it easier to achieve the former.</p>
+<section id="polyclimate" class="level3">
+<h3 class="anchored" data-anchor-id="polyclimate">Polyclimate</h3>
+<p>The <em>Polyclimate</em> project is a place to think about how questions like the above could be approached using modern tools for collaboration, to discuss what are the barriers that so far prevented such collaboration from happening, and to hopefully kickstart some actual work on producing answers to these questions in a regularly updated, open, and inclusive way.</p>
+<p>It is of course named after and inspired by the <a href="https://polymathprojects.org/">Polymath</a> project. In 2009 <a href="https://en.wikipedia.org/wiki/Timothy_Gowers">Timothy Gowers</a> asked in his blog the question:</p>
+<blockquote class="blockquote">
+<p><a href="https://gowers.wordpress.com/2009/01/27/is-massively-collaborative-mathematics-possible/">“Is massively collaborative mathematics possible?”</a>.</p>
+</blockquote>
+<p>The answer is of course yes, numerous publications and succesful proofs have emerged from the project and follow-ups. In the post he writes</p>
+<blockquote class="blockquote">
+<p>“I’ve been thinking of doing this for a long time.”</p>
+</blockquote>
+<p>So have I on doing this for some questions of climate science and when looking up whether someone had already used “Polyclimate” for this I was happily surprised to find some discussion in this <a href="https://judithcurry.com/2011/04/22/polyclimate/">blog</a>. This went apparently nowhere, and, to be clear, I am not interested in using “collective intelligence” or the “power of the internet” to “move forward on the climate debate”. Nonetheless, there are some interesting observations made, for example <a href="https://michaelnielsen.org/">Michael Nielsen</a> commented on the idea of <em>mass collaboration</em>:</p>
+<blockquote class="blockquote">
+<p>A crucial question about mass collaboration is when problems can be attacked using mass collaboration, and when it will fail. I believe the key question is whether the community involved in the collaboration has a “shared praxis” or not. By this, I mean a powerful set of shared techniques and agreed-upon methods of reasoning which all participants agree to use.</p>
+<p>[…]</p>
+<p>For climate change the issue of a shared praxis seems complicated. I think it’s pretty near a dividing line. Reading online discussions of climate, it’s obvious that many people don’t even share the same basic modes of reasoning: what one person counts as “evidence” is ignored by others, basic standards of logic are outright ignored, and so on.</p>
+</blockquote>
+<p>I don’t think <em>massive</em> online collaboration is needed, but getting a number of researchers working together, which is larger than the usual teams collaborating on questions like the ones mentioned above could have tremendous benefits. There are many areas where finding the right specialist, for example with knowledge of some specific sector’s emission could be enabled by the internet much more likely than in traditional academic collaboration.</p>
+<p>So this <em>Polyclimate</em> project is not about solving the “climate issue”. It is also not about the climate in urban systems which I discovered when searching for “polyclimate”:</p>
+<blockquote class="blockquote">
+<p>Far more attached to the subject than Friedman, Schulze-Fielitz spent 20 years studying the air-conditioning of “urban systems.” His concept of “Polyclimate” went hand in hand with Raumstadt: to each activity its space and its climate. <span class="citation" data-cites="rouillard2018megaspace">(<a href="#ref-rouillard2018megaspace" role="doc-biblioref">Rouillard 2018</a>)</span></p>
+</blockquote>
+<p>I hope <em>Polyclimate</em> can move forward the way in which researchers work together on some of the grunt work, producing basic data sets and indicators which are crucial for all of climate science but due to various reasons are not done continuously in a fully open, collaborative manner. Certainly, one can learn from the successes in online collaboration in Mathematics.</p>
+</section>
+<section id="polymath" class="level3">
+<h3 class="anchored" data-anchor-id="polymath">Polymath</h3>
+<p>An article in Nature (unfortunately paywalled, but available online at the <a href="https://www.michaelnielsen.org/papers/mcm.pdf">author’s website</a>) summarizes the Polymath story and lines out ideas for other disciplines:</p>
+<blockquote class="blockquote">
+<p>The ‘Polymath Project’ proved that many minds can work together to solve difficult mathematical problems. <span class="citation" data-cites="Gowers_2009_bv7jtp">(<a href="#ref-Gowers_2009_bv7jtp" role="doc-biblioref">Gowers and Nielsen 2009</a>)</span></p>
+</blockquote>
+<p>Building up a regularly updated global emissions or temperature dataset is of course quite different from finding a new proof, but there are many insights which can be adapted from the experiences of the Polymath projects.</p>
+<p>In his book <em>Reinventing Discovery</em> <a href="https://michaelnielsen.org/">Michael Nielsen</a> argues that scientists are more likely to contribute to projects like Polymath or Galaxy Zoo where the final output is a classical output like a scientific paper compared to projects like GenBank or Wikipedia, where their expertise would be helpful as well but is not as incentivized <span class="citation" data-cites="nielsen2011reinventing">(p.9, <a href="#ref-nielsen2011reinventing" role="doc-biblioref">Nielsen 2011</a>)</span>. In Polymath, papers were published under the pseudonym D. H. J. Polymath. I believe that publishing under pseudonym or as a working group is a critical component in getting collaborative and repeatedly updated climate science to work.</p>
+<p>There are many challenges for any such project and it is quite interesting to go back through the archives of Timothy Gower’s blog for the <a href="https://gowers.wordpress.com/category/polymath/">Polymath category</a>, read about the process, and find for example <a href="https://gowers.wordpress.com/2009/09/16/possible-future-polymath-projects/">discussions on thread depth</a> for the blog:</p>
+<blockquote class="blockquote">
+<p>On the Polymath blog, a very high level of threading is allowed, with the result that the order of comments is very different from their chronological order. This makes it substantially harder to check what has been added recently than it would be if there were no threading. It’s not impossible, since one has a list of recent comments, but it does reduce the feeling of a polymathematical thought process unfolding over time. I know that there is disagreement about this, but I am going back to the view that there should be no threading at all, though I might be ready to compromise and have threading down to depth 1, with the understanding that it should be used for brief local replies only.</p>
+</blockquote>
+</section>
+<section id="where-to-start" class="level3">
+<h3 class="anchored" data-anchor-id="where-to-start">Where to start?</h3>
+<p>Polymath started and happened to a large part on blogs. Looking for a place where I could start thinking about these questions I settled on <a href="https://github.com/polyclimate/">GitHub</a> and set up the blog you are reading now using <a href="https://quarto.org/">Quarto</a>. The latter enables inclusion of mathematical citation, code execution and citations. Comments are enabled in the blog using GitHub’s discussion feature through <a href="https://github.com/giscus/giscus/">Giscus</a>. Next to code hosting GitHub also offers Wikis, project management, issue tracking, and automated code pipelines, which means pretty much all potential ingredients for such collaborative work are there. Further, quite a few of the people I could imagine contributing to such efforts are already actively doing science in the open on GitHub, so if you have an account there you are ready to comment and contribute.</p>
+<p>For any work done in public there are concerns about trolls, here GitHub has features for limiting interaction. As on most social platforms there can be difficulties for people from countries under <a href="https://docs.github.com/en/site-policy/other-site-policies/github-and-trade-controls">trade control regulations</a>, but for the usage of the free GitHub tools there should be no impediment in contributing. GitHub is a social platform, so it might be possible to recreate some of the fruitful collaboration which used to happen on sites like Twitter, where tagging the user account of a person knowledgeable on a niche topic could get them into a conversation and generate new insights.</p>
+<p>With <a href="https://manubot.org/">Manubot</a> there is also a successful usage of GitHub as platform for collaborative science, developed during writing the Deep Review, a review article on deep learning in precision medicine <span class="citation" data-cites="Ching_2018_gddkhn Himmelstein_2019_c7np">(<a href="#ref-Ching_2018_gddkhn" role="doc-biblioref">Ching et al. 2018</a>; <a href="#ref-Himmelstein_2019_c7np" role="doc-biblioref">Himmelstein et al. 2019</a>)</span>.</p>
+<p>Challenges in online collaboration are of course partly technical, but I believe mostly social. Working in the open has benefits, but can also create new opportunities.</p>
+<p>On the challenges with the research questions stated above, is it lack of funding for updates, which are just updates and not novel, shiny discoveries? Does the current academic system with its many short-term contracts disincentivize such work?</p>
+<p>What questions in general could or should be approached in such a collaborative manner?</p>
+<p>Leave your thoughts and ideas in the comments. (Sign up on GitHub if you haven’t already.)</p>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Ching_2018_gddkhn" class="csl-entry" role="listitem">
+Ching, Travers, Daniel S. Himmelstein, Brett K. Beaulieu-Jones, Alexandr A. Kalinin, Brian T. Do, Gregory P. Way, Enrico Ferrero, et al. 2018. <span>“Opportunities and Obstacles for Deep Learning in Biology and Medicine.”</span> <em>Journal of The Royal Society Interface</em> 15 (141): 20170387. <a href="https://doi.org/10.1098/rsif.2017.0387">https://doi.org/10.1098/rsif.2017.0387</a>.
+</div>
+<div id="ref-Gowers_2009_bv7jtp" class="csl-entry" role="listitem">
+Gowers, Timothy, and Michael Nielsen. 2009. <span>“Massively Collaborative Mathematics.”</span> <em>Nature</em> 461 (7266): 879–81. <a href="https://doi.org/10.1038/461879a">https://doi.org/10.1038/461879a</a>.
+</div>
+<div id="ref-Himmelstein_2019_c7np" class="csl-entry" role="listitem">
+Himmelstein, Daniel S., Vincent Rubinetti, David R. Slochower, Dongbo Hu, Venkat S. Malladi, Casey S. Greene, and Anthony Gitter. 2019. <span>“Open Collaborative Writing with Manubot.”</span> Edited by Dina Schneidman-Duhovny. <em><span>PLOS</span> Computational Biology</em> 15 (6): e1007128. <a href="https://doi.org/10.1371/journal.pcbi.1007128">https://doi.org/10.1371/journal.pcbi.1007128</a>.
+</div>
+<div id="ref-nielsen2011reinventing" class="csl-entry" role="listitem">
+Nielsen, Michael. 2011. <em>Reinventing Discovery: The New Era of Networked Science</em>. Princeton University Press.
+</div>
+<div id="ref-rouillard2018megaspace" class="csl-entry" role="listitem">
+Rouillard, Dominique. 2018. <span>“Megaspace Structure Yona Friedman and Eckhard Schulze–Fielitz.”</span> <em>Histories of Postwar Architecture</em>, no. 3: 3–18.
+</div>
+</div></section></div></main> <!-- /main -->
+<script src="https://giscus.app/client.js" data-repo="polyclimate/polyclimate.org" data-repo-id="R_kgDOJqJkWg" data-category="Announcements" data-category-id="DIC_kwDOJqJkWs4CW4d7" data-mapping="pathname" data-strict="1" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

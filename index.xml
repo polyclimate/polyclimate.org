@@ -10,6 +10,98 @@
 <atom:link href="https://polyclimate.org/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Tue, 22 Aug 2023 18:53:29 GMT</lastBuildDate>
+<lastBuildDate>Tue, 22 Aug 2023 19:02:00 GMT</lastBuildDate>
+<item>
+  <title>Announcing Project Polyclimate</title>
+  <dc:creator>Robert Gieseke</dc:creator>
+  <link>https://polyclimate.org/posts/announcing-project-polyclimate/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://polyclimate.org/posts/announcing-project-polyclimate/duck.jpg" class="img-fluid" alt="Cover of Michael Nielsen's book Reinventing Discovery, a tree and three ducks in the background"></p>
+<p>It is 100 days until <a href="https://www.cop28.com/en/">COP28</a> in Dubai. The <a href="https://unfccc.int/topics/global-stocktake">Global Stocktake</a>, the process to assess progress towards the goals of the Paris Climate Change Agreement, is scheduled to take place every five years and for the first time during COP28.</p>
+<p>Some questions and indicators one might ask about during such a Global Stocktake, or in fact constantly, when thinking about climate change, could be:</p>
+<ul>
+<li>What are global emissions levels?</li>
+<li>How far are we from 1.5 or 2.0°C?</li>
+<li>How big is the remaining carbon budget?</li>
+<li>When adding together climate plans of countries (<a href="https://unfccc.int/NDCREG">NDCs</a>), where do we end up?</li>
+</ul>
+<p>When trying to look up an answer for questions like these, they can be surprisingly difficult to find given their importance for our common future. Of course answers exist, in academic publications, in reports like those from the <a href="https://www.ipcc.ch/">IPCC</a>, or in reports or websites from various governmental or non-governmental organizations. Few of them however are regularly updated and fully done reproducibly in the spirit of open science, where the latter would make it easier to achieve the former.</p>
+<section id="polyclimate" class="level3">
+<h3 class="anchored" data-anchor-id="polyclimate">Polyclimate</h3>
+<p>The <em>Polyclimate</em> project is a place to think about how questions like the above could be approached using modern tools for collaboration, to discuss what are the barriers that so far prevented such collaboration from happening, and to hopefully kickstart some actual work on producing answers to these questions in a regularly updated, open, and inclusive way.</p>
+<p>It is of course named after and inspired by the <a href="https://polymathprojects.org/">Polymath</a> project. In 2009 <a href="https://en.wikipedia.org/wiki/Timothy_Gowers">Timothy Gowers</a> asked in his blog the question:</p>
+<blockquote class="blockquote">
+<p><a href="https://gowers.wordpress.com/2009/01/27/is-massively-collaborative-mathematics-possible/">“Is massively collaborative mathematics possible?”</a>.</p>
+</blockquote>
+<p>The answer is of course yes, numerous publications and succesful proofs have emerged from the project and follow-ups. In the post he writes</p>
+<blockquote class="blockquote">
+<p>“I’ve been thinking of doing this for a long time.”</p>
+</blockquote>
+<p>So have I on doing this for some questions of climate science and when looking up whether someone had already used “Polyclimate” for this I was happily surprised to find some discussion in this <a href="https://judithcurry.com/2011/04/22/polyclimate/">blog</a>. This went apparently nowhere, and, to be clear, I am not interested in using “collective intelligence” or the “power of the internet” to “move forward on the climate debate”. Nonetheless, there are some interesting observations made, for example <a href="https://michaelnielsen.org/">Michael Nielsen</a> commented on the idea of <em>mass collaboration</em>:</p>
+<blockquote class="blockquote">
+<p>A crucial question about mass collaboration is when problems can be attacked using mass collaboration, and when it will fail. I believe the key question is whether the community involved in the collaboration has a “shared praxis” or not. By this, I mean a powerful set of shared techniques and agreed-upon methods of reasoning which all participants agree to use.</p>
+<p>[…]</p>
+<p>For climate change the issue of a shared praxis seems complicated. I think it’s pretty near a dividing line. Reading online discussions of climate, it’s obvious that many people don’t even share the same basic modes of reasoning: what one person counts as “evidence” is ignored by others, basic standards of logic are outright ignored, and so on.</p>
+</blockquote>
+<p>I don’t think <em>massive</em> online collaboration is needed, but getting a number of researchers working together, which is larger than the usual teams collaborating on questions like the ones mentioned above could have tremendous benefits. There are many areas where finding the right specialist, for example with knowledge of some specific sector’s emission could be enabled by the internet much more likely than in traditional academic collaboration.</p>
+<p>So this <em>Polyclimate</em> project is not about solving the “climate issue”. It is also not about the climate in urban systems which I discovered when searching for “polyclimate”:</p>
+<blockquote class="blockquote">
+<p>Far more attached to the subject than Friedman, Schulze-Fielitz spent 20 years studying the air-conditioning of “urban systems.” His concept of “Polyclimate” went hand in hand with Raumstadt: to each activity its space and its climate. <span class="citation" data-cites="rouillard2018megaspace">(Rouillard 2018)</span></p>
+</blockquote>
+<p>I hope <em>Polyclimate</em> can move forward the way in which researchers work together on some of the grunt work, producing basic data sets and indicators which are crucial for all of climate science but due to various reasons are not done continuously in a fully open, collaborative manner. Certainly, one can learn from the successes in online collaboration in Mathematics.</p>
+</section>
+<section id="polymath" class="level3">
+<h3 class="anchored" data-anchor-id="polymath">Polymath</h3>
+<p>An article in Nature (unfortunately paywalled, but available online at the <a href="https://www.michaelnielsen.org/papers/mcm.pdf">author’s website</a>) summarizes the Polymath story and lines out ideas for other disciplines:</p>
+<blockquote class="blockquote">
+<p>The ‘Polymath Project’ proved that many minds can work together to solve difficult mathematical problems. <span class="citation" data-cites="Gowers_2009_bv7jtp">(Gowers and Nielsen 2009)</span></p>
+</blockquote>
+<p>Building up a regularly updated global emissions or temperature dataset is of course quite different from finding a new proof, but there are many insights which can be adapted from the experiences of the Polymath projects.</p>
+<p>In his book <em>Reinventing Discovery</em> <a href="https://michaelnielsen.org/">Michael Nielsen</a> argues that scientists are more likely to contribute to projects like Polymath or Galaxy Zoo where the final output is a classical output like a scientific paper compared to projects like GenBank or Wikipedia, where their expertise would be helpful as well but is not as incentivized <span class="citation" data-cites="nielsen2011reinventing">(p.9, Nielsen 2011)</span>. In Polymath, papers were published under the pseudonym D. H. J. Polymath. I believe that publishing under pseudonym or as a working group is a critical component in getting collaborative and repeatedly updated climate science to work.</p>
+<p>There are many challenges for any such project and it is quite interesting to go back through the archives of Timothy Gower’s blog for the <a href="https://gowers.wordpress.com/category/polymath/">Polymath category</a>, read about the process, and find for example <a href="https://gowers.wordpress.com/2009/09/16/possible-future-polymath-projects/">discussions on thread depth</a> for the blog:</p>
+<blockquote class="blockquote">
+<p>On the Polymath blog, a very high level of threading is allowed, with the result that the order of comments is very different from their chronological order. This makes it substantially harder to check what has been added recently than it would be if there were no threading. It’s not impossible, since one has a list of recent comments, but it does reduce the feeling of a polymathematical thought process unfolding over time. I know that there is disagreement about this, but I am going back to the view that there should be no threading at all, though I might be ready to compromise and have threading down to depth 1, with the understanding that it should be used for brief local replies only.</p>
+</blockquote>
+</section>
+<section id="where-to-start" class="level3">
+<h3 class="anchored" data-anchor-id="where-to-start">Where to start?</h3>
+<p>Polymath started and happened to a large part on blogs. Looking for a place where I could start thinking about these questions I settled on <a href="https://github.com/polyclimate/">GitHub</a> and set up the blog you are reading now using <a href="https://quarto.org/">Quarto</a>. The latter enables inclusion of mathematical citation, code execution and citations. Comments are enabled in the blog using GitHub’s discussion feature through <a href="https://github.com/giscus/giscus/">Giscus</a>. Next to code hosting GitHub also offers Wikis, project management, issue tracking, and automated code pipelines, which means pretty much all potential ingredients for such collaborative work are there. Further, quite a few of the people I could imagine contributing to such efforts are already actively doing science in the open on GitHub, so if you have an account there you are ready to comment and contribute.</p>
+<p>For any work done in public there are concerns about trolls, here GitHub has features for limiting interaction. As on most social platforms there can be difficulties for people from countries under <a href="https://docs.github.com/en/site-policy/other-site-policies/github-and-trade-controls">trade control regulations</a>, but for the usage of the free GitHub tools there should be no impediment in contributing. GitHub is a social platform, so it might be possible to recreate some of the fruitful collaboration which used to happen on sites like Twitter, where tagging the user account of a person knowledgeable on a niche topic could get them into a conversation and generate new insights.</p>
+<p>With <a href="https://manubot.org/">Manubot</a> there is also a successful usage of GitHub as platform for collaborative science, developed during writing the Deep Review, a review article on deep learning in precision medicine <span class="citation" data-cites="Ching_2018_gddkhn Himmelstein_2019_c7np">(Ching et al. 2018; Himmelstein et al. 2019)</span>.</p>
+<p>Challenges in online collaboration are of course partly technical, but I believe mostly social. Working in the open has benefits, but can also create new opportunities.</p>
+<p>On the challenges with the research questions stated above, is it lack of funding for updates, which are just updates and not novel, shiny discoveries? Does the current academic system with its many short-term contracts disincentivize such work?</p>
+<p>What questions in general could or should be approached in such a collaborative manner?</p>
+<p>Leave your thoughts and ideas in the comments. (Sign up on GitHub if you haven’t already.)</p>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Ching_2018_gddkhn" class="csl-entry">
+Ching, Travers, Daniel S. Himmelstein, Brett K. Beaulieu-Jones, Alexandr A. Kalinin, Brian T. Do, Gregory P. Way, Enrico Ferrero, et al. 2018. <span>“Opportunities and Obstacles for Deep Learning in Biology and Medicine.”</span> <em>Journal of The Royal Society Interface</em> 15 (141): 20170387. <a href="https://doi.org/10.1098/rsif.2017.0387">https://doi.org/10.1098/rsif.2017.0387</a>.
+</div>
+<div id="ref-Gowers_2009_bv7jtp" class="csl-entry">
+Gowers, Timothy, and Michael Nielsen. 2009. <span>“Massively Collaborative Mathematics.”</span> <em>Nature</em> 461 (7266): 879–81. <a href="https://doi.org/10.1038/461879a">https://doi.org/10.1038/461879a</a>.
+</div>
+<div id="ref-Himmelstein_2019_c7np" class="csl-entry">
+Himmelstein, Daniel S., Vincent Rubinetti, David R. Slochower, Dongbo Hu, Venkat S. Malladi, Casey S. Greene, and Anthony Gitter. 2019. <span>“Open Collaborative Writing with Manubot.”</span> Edited by Dina Schneidman-Duhovny. <em><span>PLOS</span> Computational Biology</em> 15 (6): e1007128. <a href="https://doi.org/10.1371/journal.pcbi.1007128">https://doi.org/10.1371/journal.pcbi.1007128</a>.
+</div>
+<div id="ref-nielsen2011reinventing" class="csl-entry">
+Nielsen, Michael. 2011. <em>Reinventing Discovery: The New Era of Networked Science</em>. Princeton University Press.
+</div>
+<div id="ref-rouillard2018megaspace" class="csl-entry">
+Rouillard, Dominique. 2018. <span>“Megaspace Structure Yona Friedman and Eckhard Schulze–Fielitz.”</span> <em>Histories of Postwar Architecture</em>, no. 3: 3–18.
+</div>
+</div></section></div> ]]></description>
+  <category>Polyclimate</category>
+  <category>Polymath</category>
+  <guid>https://polyclimate.org/posts/announcing-project-polyclimate/index.html</guid>
+  <pubDate>Tue, 22 Aug 2023 19:02:00 GMT</pubDate>
+</item>
 </channel>
 </rss>
