@@ -10,7 +10,288 @@
 <atom:link href="https://polyclimate.org/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Tue, 22 Aug 2023 19:02:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 24 Aug 2023 09:30:00 GMT</lastBuildDate>
+<item>
+  <title>Polyclimate Emissions</title>
+  <dc:creator>Robert Gieseke</dc:creator>
+  <link>https://polyclimate.org/posts/polyclimate-emissions/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div id="cell-fig-global-emissions" class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-overflow-wrap code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span>
+<span id="cb1-3"></span>
+<span id="cb1-4">plt.style.use(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ggplot"</span>)</span>
+<span id="cb1-5"></span>
+<span id="cb1-6">cat_df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(</span>
+<span id="cb1-7">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://climateactiontracker.org/documents/1131/CAT_2022_Warming_projections_global_update.xlsx"</span>, </span>
+<span id="cb1-8">    sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Global Emissions time series"</span></span>
+<span id="cb1-9">)</span>
+<span id="cb1-10"></span>
+<span id="cb1-11">cat <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.DataFrame(cat_df.iloc[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">23</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>:].values, index<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>cat_df.iloc[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">13</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>:].astype(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>)).dropna()</span>
+<span id="cb1-12">cat.columns <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CAT"</span>]</span>
+<span id="cb1-13"></span>
+<span id="cb1-14">ipcc <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(</span>
+<span id="cb1-15">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://open-data.metadata.works/ipcc/437/ipcc_ar6_figure_spm_1_archive.xlsx?response-content-disposition=attachment"</span>,</span>
+<span id="cb1-16">    sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"panel_a"</span></span>
+<span id="cb1-17">)</span>
+<span id="cb1-18">ipcc <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> ipcc.groupby(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"year (panel_a)"</span>).<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>()</span>
+<span id="cb1-19">ipcc.index.name <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"year"</span></span>
+<span id="cb1-20">ipcc <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> ipcc.iloc[:, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span>
+<span id="cb1-21"></span>
+<span id="cb1-22">igcc <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://github.com/ClimateIndicator/GHG-Emissions-Assessment/raw/main/results/ghg_emissions_co2e.csv"</span>, index_col<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)</span>
+<span id="cb1-23"></span>
+<span id="cb1-24">fig, ax <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.subplots()</span>
+<span id="cb1-25">ipcc.plot(ax<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>ax)</span>
+<span id="cb1-26">igcc.loc[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1990</span>:, :].iloc[:, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>:].<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>(axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>).plot(ax<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>ax)</span>
+<span id="cb1-27">cat.plot(ax<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>ax, legend<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span>
+<span id="cb1-28">ax.legend([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"IPCC (Apr. 2022)"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"IGCC (Jun. 2023)"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CAT (Nov. 2022)"</span>], loc<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"lower right"</span>)</span>
+<span id="cb1-29">ax.set_xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">""</span>)</span>
+<span id="cb1-30">ax.set_ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Gt CO₂-eq / yr"</span>)</span>
+<span id="cb1-31">ax.set_title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Global Emissions (using different source datasets)"</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-global-emissions" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://polyclimate.org/posts/polyclimate-emissions/index_files/figure-html/fig-global-emissions-output-1.png" width="587" height="433" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Global emission estimates from <a href="https://ipcc-browser.ipcc-data.org/browser/dataset?id=437">IPCC AR6 WGIII SPM</a>, <a href="https://doi.org/10.5194/essd-15-2295-2023">IGCC (2023)</a>, and <a href="https://climateactiontracker.org/global/temperatures/">CAT (2022)</a>, each using different sources</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>It might appear surprising but there exists no complete and regularly updated global emissions dataset which covers the greenhouse gases needed to run a simple climate model or to answer the question what are global emissions levels currently at with confidence. Usually, each time a new combination of source datasets has to be assembled. Depending on approach the values might differ significantly.</p>
+<p>IPCC AR6 WGIII reported 59 Gt CO₂-eq in 2019, the <em>Indicators of Global Climate Change 2022</em> paper <span class="citation" data-cites="Forster_2023_gsbsj4">(Forster et al. 2023)</span> used some different data sources and updated landuse data and reported 55 Gt CO₂-eq. The <a href="https://climateactiontracker.org/global/temperatures/">Climate Action Tracker</a> had 52.3 Gt CO₂-eq for 2019 in its November 2022 update.</p>
+<p>Some of the differences can be explained by different choice of dataset but the decision which dataset to use sometimes appear arbitrary. In the <em>Indicators of Global Climate Change 2022</em> paper, an update to the data published in the IPCC’s AR6 report, the authors pick different data sources:</p>
+<blockquote class="blockquote">
+<p>We also use the same type of data sources but make important changes to the specific selection of data sources to further improve the quality of the data, as suggested in the knowledge gap discussion of the WGIII report (Dhakal et al., 2022). Instead of using EDGAR data (which are now available as version 7), we use GCB data for CO2-FFI, PRIMAP-hist data for CH4 and N2O, and atmospheric concentrations with best-estimate lifetimes for UNFCCC F-gas emissions (Hodnebrog et al., 2020). As in AR6 WGIII we use GCB for net CO2-LULUCF emissions, taking the average of three bookkeeping models.</p>
+</blockquote>
+<p><span class="citation" data-cites="Forster_2023_gsbsj4">(Forster et al. 2023)</span></p>
+<p>They give the reason for their choices as follows:</p>
+<blockquote class="blockquote">
+<p>There are three reasons for these specific data choices. First, national greenhouse gas emissions inventories tend to use improved, higher-tier methods for estimating emissions fluxes than global inventories such as EDGAR or CEDS (Dhakal et al., 2022; Minx et al., 2021). As GCB and PRIMAP-hist integrate the most recent national inventory submissions to the UNFCCC, selecting these databases makes best use of country-level improvements in data-gathering infrastructures.</p>
+</blockquote>
+<p><span class="citation" data-cites="Forster_2023_gsbsj4">(Forster et al. 2023)</span></p>
+<p>If the suggestion to use more data from national inventories can be inferred from the <em>Knowledge Gaps</em> section in the IPCC WGIII Chapter 2 discussion, why wasn’t it already used in AR6? The data sources used in the IGCC report were available then as well.</p>
+<p>Given the number of datasets there are other combinations possible. A recent paper on <em>National contributions to climate change due to historical emissions</em>, with quite some overlap of authors with the IGCC paper, prefers third-party reported data which lie in the middle of other estimates:</p>
+<blockquote class="blockquote">
+<p>As discussed above, Minx et al.&nbsp;(ref. 64) compared available estimates of CH4 and N2O emissions and found that PRIMAP-hist (TP scenario) lies centrally amongst those estimates. […] Hence, we note that the CH4 and N2O emissions estimates used in the current study lie centrally within a large uncertainty range globally and within a poorly constrained uncertainty range on national scales.</p>
+</blockquote>
+<p><span class="citation" data-cites="Jones_2023_gsc84q">(Jones et al. 2023)</span></p>
+<p>In any case, more discussion and research is needed, as was discussed in the <a href="https://essd.copernicus.org/articles/15/2295/2023/essd-15-2295-2023-discussion.html#CC11">peer review</a> of the IGCC paper.</p>
+<p>Different choices have also been made in previous IPCC reports. AR4 wrote in its chapter on <a href="https://archive.ipcc.ch/publications_and_data/ar4/wg3/en/ch1s1-3.html">“Energy, emissions and trends in Research and Development – are we on track?”</a> that</p>
+<blockquote class="blockquote">
+<p>[a] variety of sources exist for determining global and regional GHG and other climate forcing agent trends. Each source has its strengths and weaknesses and uncertainties.</p>
+</blockquote>
+<p>For its assessment it appears to have used EDGAR and CDIAC. Then, AR5 used versions of <a href="https://www.iea.org/data-and-statistics/data-product/greenhouse-gas-emissions-from-energy">IEA</a> and <a href="https://edgar.jrc.ec.europa.eu/">EDGAR</a> data <span class="citation" data-cites="krey2014annex">(Krey et al. 2014)</span>.</p>
+<p>It is hard to disentangle changes over time and to understand differences between studies if different datasets are used every time. The detailed review of CO₂ datasets by <span class="citation" data-cites="andrewComparisonEstimatesGlobal2020">Andrew (2020b)</span> found that differences between datasets to a large part come down to different system boundaries, the inclusion or omission of sources. It also included a call for an Intercomparison Project:</p>
+<blockquote class="blockquote">
+<p>Given the inconsistent system boundaries across emissions datasets, one could conceive of a “carbon emissions dataset intercomparison project”, or CEDIP, along the lines of the Coupled Model Intercomparison Project (CMIP) and other related model comparison projects. A core part of these intercomparison projects is the requirement that participants report model outputs to a specified and very clear template such that the issue of system boundary differences is removed. For example, an estimate for global total CO2 emissions could not be reported for a dataset if it excluded sources or countries. In effect, a CEDIP would extend the work done in this article, allowing each data provider to submit according to their superior understanding of their own datasets, permitting more robust comparison, and, critically, allowing lessons to be gained such that estimates can be improved.</p>
+</blockquote>
+<p>In the reply to Reviewer #1 Robbie Andrew wrote:</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Page 40 line 637: Would a recommendation to data producers be to make their methodology and data sources more transparent to allow for better understanding?</p>
+</blockquote>
+<p>The difficulty I have here is what concrete suggestions can be made for doing this. I know that different groups have thought a lot about how to transparently and comprehensively document methods and sources, but still we come up with a lot of missing and obscured information. <strong>I tend to think this is almost unsolvable</strong>. While it might be thought that the best approach might be to have a standard format, the methods differ quite substantially such that it’s not necessarily straightforward to report them in the same way.</p>
+</blockquote>
+<p><span class="citation" data-cites="Andrew_2020_gsmw4p">(emphasis mine, Andrew 2020a)</span></p>
+<p>Getting data providers to agree on a common format is definitely a challenge and releasing or cleaning up data pipelines is not a priority for researchers in the current academic system.</p>
+<p>Another issue is the interdependence of datasets, which makes it hard to assess uncertainty from differences between datasets. From the same study the construction and relationships of CO₂ emissions datasets is shown below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://polyclimate.org/posts/polyclimate-emissions/essd-12-1437-2020-f01-web.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure 1 from <span class="citation" data-cites="andrewComparisonEstimatesGlobal2020">Andrew (2020b)</span> shows interrelation and build-up of different CO₂ datasets, see original study for detailed caption (<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a>)</figcaption>
+</figure>
+</div>
+<section id="community-projects" class="level3">
+<h3 class="anchored" data-anchor-id="community-projects">Community projects</h3>
+<p>There exist a number of emissions data projects who already have elements of community projects. Even open peer review and working in public can improve the process and signal openness to outside contributors.</p>
+<p>The <a href="https://globalcarbonbudget.org/">Global Carbon Budget</a>, an annually published report which is part of the <a href="https://www.globalcarbonproject.org">Global Carbon Project</a> is something to look into when thinking on how to produce datasets from the community <span class="citation" data-cites="friedlingsteinGlobalCarbonBudget2022a">(Friedlingstein et al. 2022)</span>. While there are many co-authors collaborating only a small number is directly working on fossil and land-use emissions, as other area of the Carbon Cycle are also covered in the paper. In any case, the lack of direct funding has been a persistent problem:</p>
+<blockquote class="blockquote">
+<p>The work we do in <a href="https://twitter.com/gcarbonproject/">@gcarbonproject</a> has <em>zero</em> direct funding, we have to align with other project activities to cover costs. Yet, we persist in updating annually.</p>
+<p>These seem to be standard issues for anyone working on data.</p>
+</blockquote>
+<p><a href="https://twitter.com/Peters_Glen/status/1446381946913894404">(Glen Peters on Twitter)</a></p>
+<p>The Global Carbon Budget is widely used, but covers only CO₂. The <a href="https://primap.org/primap-hist/">PRIMAP-hist</a> dataset covers all Kyoto greenhouse gases <span class="citation" data-cites="gutschowPRIMAPhistNationalHistorical2016b">(Gütschow et al. 2016)</span> but doesn’t include emissions from international aviation and shipping. Emissions from land-use are not included in the main file but only in a separate file and come with a caveat since “they are constructed from different sources using different methodologies and are not harmonized” <span class="citation" data-cites="Guetschow_2023_gsmrpq">(Gütschow and Pflüger 2023)</span>.<br>
+In a comment on the <a href="https://polyclimate.org/posts/announcing-project-polyclimate/">announcement post</a> <a href="https://github.com/mikapfl">Mika Pflüger</a> mentioned the potentially collaborative setup for doing the hard work of freeing data submitted to the UN from PDFs and the challenges with storing larger data on GitHub. Code and data can be found in their <a href="https://gin.hemio.de/jguetschow/UNFCCC_non-AnnexI_data">GIN server</a>.</p>
+<p>The <a href="https://www.pnnl.gov/projects/ceds">Community Emissions Data System (CEDS)</a> for Historical Emissions <span class="citation" data-cites="Hoesly_2018_gcxtgm">(Hoesly et al. 2018)</span> covers a different subset of species and is probably the most open of the emission products . The <a href="https://github.com/JGCRI/CEDS/">code on GitHub</a> is available and only some input data from the IEA is missing to make this fully reproducible. However, long-term sustainability has been a question as well from Reviewer #1:</p>
+<blockquote class="blockquote">
+<p>An outline of long-term plans for the CEDS database is needed in the summary section to build confidence in its sustainability. Modelers would like to know if they can rely on the CEDS system working even after CMIP6. What are the plans for maintenance of the back-end software, frequency of updates to the input data and for maintaining funding for CEDS?</p>
+</blockquote>
+<p><span class="citation" data-cites="Anonymous_2017_gsm2zg">(Anonymous 2017)</span></p>
+<p>The <a href="https://web.archive.org/web/20191219040122/http://www.match-info.net/">MATCH</a> (Ad-hoc group for the modelling and assessment of contributions to climate change) working group is quite interesting in this context. As part of UNFCCC negotiations Brazil proposed in 1997</p>
+<blockquote class="blockquote">
+<p>to set differentiated emissions reduction targets for Parties according to the impact of their historic emissions on temperature rise (document FCCC/AGBM/1997/MISC.1/Add.3).</p>
+</blockquote>
+<p>From the expert meetings an open group of voluntary contributors emerged, who published several papers, including assessments of historical emissions, supported by governments who funded travel and administrative support. It could be instructive to learn more from the history of this project (and how to prevent results getting lost when domains aren’t renewed anymore.)</p>
+<p>What are the challenges for having an emissions dataset intercomparison project? Have any proposals already be written? How can we get a regularly updated dataset of the inputs required to run a simple climate model? Do we need something like the Global Carbon Project for all greenhouse gases?</p>
+<blockquote class="blockquote">
+<p>We have put a lot of effort into understanding the variation in fossil CO₂ emissions, but what about other GHG emissions?</p>
+<p>I would say we have some work to do… We need a <a href="https://twitter.com/gcarbonproject">@gcarbonproject</a> covering all GHG emissions! https://essd.copernicus.org/articles/13/5213/2021/</p>
+</blockquote>
+<p><a href="https://twitter.com/Peters_Glen/status/1459065929124376577">(Glen Peters on Twitter)</a></p>
+<p>An do we have to rely on crowdfunding to get it?</p>
+<blockquote class="blockquote">
+<p>Yes please. Not having one single authoritative dataset for non-CO2 emissions makes running an emissions-based simple climate model particularly difficult🙃</p>
+<p>Will donate $10 to a crowdfunder?</p>
+</blockquote>
+<p><a href="https://twitter.com/chrisroadmap/status/1459156819285352496">(Chris Smith on Twitter)</a></p>
+<p>Leave your thoughts and ideas in the comments!</p>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Andrew_2020_gsmw4p" class="csl-entry">
+Andrew, Robbie. 2020a. <span>“Responses to Reviews.”</span> Copernicus <span>GmbH</span>. <a href="https://doi.org/10.5194/essd-2020-34-ac1">https://doi.org/10.5194/essd-2020-34-ac1</a>.
+</div>
+<div id="ref-andrewComparisonEstimatesGlobal2020" class="csl-entry">
+———. 2020b. <span>“A Comparison of Estimates of Global Carbon Dioxide Emissions from Fossil Carbon Sources.”</span> <em>Earth System Science Data</em> 12 (2): 1437–65. <a href="https://doi.org/10.5194/essd-12-1437-2020">https://doi.org/10.5194/essd-12-1437-2020</a>.
+</div>
+<div id="ref-Anonymous_2017_gsm2zg" class="csl-entry">
+Anonymous. 2017. <span>“Review of Hoesly Et Al for Publication in <span>ACP</span>,”</span> April. <a href="https://doi.org/10.5194/gmd-2017-43-rc1">https://doi.org/10.5194/gmd-2017-43-rc1</a>.
+</div>
+<div id="ref-Forster_2023_gsbsj4" class="csl-entry">
+Forster, Piers M., Christopher J. Smith, Tristram Walsh, William F. Lamb, Robin Lamboll, Mathias Hauser, Aurélien Ribes, et al. 2023. <span>“Indicators of Global Climate Change 2022: Annual Update of Large-Scale Indicators of the State of the Climate System and Human Influence.”</span> <em>Earth System Science Data</em> 15 (6): 2295–2327. <a href="https://doi.org/10.5194/essd-15-2295-2023">https://doi.org/10.5194/essd-15-2295-2023</a>.
+</div>
+<div id="ref-friedlingsteinGlobalCarbonBudget2022a" class="csl-entry">
+Friedlingstein, Pierre, Michael O’Sullivan, Matthew W. Jones, Robbie M. Andrew, Luke Gregor, Judith Hauck, Corinne Le Quéré, et al. 2022. <span>“Global <span>Carbon Budget</span> 2022.”</span> <em>Earth System Science Data</em> 14 (11): 4811–4900. <a href="https://doi.org/10.5194/essd-14-4811-2022">https://doi.org/10.5194/essd-14-4811-2022</a>.
+</div>
+<div id="ref-gutschowPRIMAPhistNationalHistorical2016b" class="csl-entry">
+Gütschow, Johannes, M. Louise Jeffery, Robert Gieseke, Ronja Gebel, David Stevens, Mario Krapp, and Marcia Rocha. 2016. <span>“The <span class="nocase">PRIMAP-hist</span> National Historical Emissions Time Series.”</span> <em>Earth System Science Data</em> 8 (2): 571–603. <a href="https://doi.org/10.5194/essd-8-571-2016">https://doi.org/10.5194/essd-8-571-2016</a>.
+</div>
+<div id="ref-Guetschow_2023_gsmrpq" class="csl-entry">
+Gütschow, Johannes, and Mika Pflüger. 2023. <span>“The PRIMAP-Hist National Historical Emissions Time Series (1750-2021) V2.4.2.”</span> Zenodo. <a href="https://doi.org/10.5281/ZENODO.7727475">https://doi.org/10.5281/ZENODO.7727475</a>.
+</div>
+<div id="ref-Hoesly_2018_gcxtgm" class="csl-entry">
+Hoesly, Rachel M., Steven J. Smith, Leyang Feng, Zbigniew Klimont, Greet Janssens-Maenhout, Tyler Pitkanen, Jonathan J. Seibert, et al. 2018. <span>“Historical (1750<span></span>2014) Anthropogenic Emissions of Reactive Gases and Aerosols from the Community Emissions Data System (<span>CEDS</span>).”</span> <em>Geoscientific Model Development</em> 11 (1): 369–408. <a href="https://doi.org/10.5194/gmd-11-369-2018">https://doi.org/10.5194/gmd-11-369-2018</a>.
+</div>
+<div id="ref-Jones_2023_gsc84q" class="csl-entry">
+Jones, Matthew W., Glen P. Peters, Thomas Gasser, Robbie M. Andrew, Clemens Schwingshackl, Johannes Gütschow, Richard A. Houghton, Pierre Friedlingstein, Julia Pongratz, and Corinne Le Quéré. 2023. <span>“National Contributions to Climate Change Due to Historical Emissions of Carbon Dioxide, Methane, and Nitrous Oxide Since 1850.”</span> <em>Scientific Data</em> 10 (1). <a href="https://doi.org/10.1038/s41597-023-02041-1">https://doi.org/10.1038/s41597-023-02041-1</a>.
+</div>
+<div id="ref-krey2014annex" class="csl-entry">
+Krey, Volker, Omar Masera, Geoffrey Blanford, Thomas Bruckner, Roger Cooke, Karen Fisher-Vanden, Helmut Haberl, et al. 2014. <span>“Annex 2-Metrics and Methodology.”</span>
+</div>
+</div></section></div> ]]></description>
+  <category>Polyclimate</category>
+  <category>Emissions</category>
+  <guid>https://polyclimate.org/posts/polyclimate-emissions/index.html</guid>
+  <pubDate>Thu, 24 Aug 2023 09:30:00 GMT</pubDate>
+</item>
 <item>
   <title>Announcing Project Polyclimate</title>
   <dc:creator>Robert Gieseke</dc:creator>
