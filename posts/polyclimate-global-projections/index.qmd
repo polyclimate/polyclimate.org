@@ -6,7 +6,7 @@ author:
 date: "2023-09-04 12:20+02:00"
 image: persistence.png
 description: "Carbon Budgets, Temperature Pathways and a proposal for Global Projections based on stylized scenarios."
-categories: ["Polyclimate", "Polyclimate", "Global Projections"]
+categories: ["Polyclimate", "Polyclimate1", "Global Projections"]
 bibliography: references.bib
 ---
 
