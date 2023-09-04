@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Robert Gieseke">
+<meta name="dcterms.date" content="2023-09-04">
+<meta name="description" content="Carbon Budgets, Temperature Pathways and a proposal for Global Projections based on stylized scenarios.">
+
+<title>Polyclimate - Polyclimate Global Projections</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Polyclimate - Polyclimate Global Projections">
+<meta property="og:description" content="Carbon Budgets, Temperature Pathways and a proposal for Global Projections based on stylized scenarios.">
+<meta property="og:image" content="https://polyclimate.org/posts/polyclimate-global-projections/persistence.png">
+<meta property="og:site-name" content="Polyclimate">
+<meta property="og:image:height" content="500">
+<meta property="og:image:width" content="1200">
+<meta name="twitter:title" content="Polyclimate - Polyclimate Global Projections">
+<meta name="twitter:description" content="Carbon Budgets, Temperature Pathways and a proposal for Global Projections based on stylized scenarios.">
+<meta name="twitter:image" content="https://polyclimate.org/posts/polyclimate-global-projections/persistence.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="500">
+<meta name="twitter:image-width" content="1200">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Polyclimate</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/polyclimate" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Polyclimate Global Projections</h1>
+                  <div>
+        <div class="description">
+          Carbon Budgets, Temperature Pathways and a proposal for Global Projections based on stylized scenarios.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Polyclimate</div>
+                <div class="quarto-category">Polyclimate</div>
+                <div class="quarto-category">Global Projections</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Robert Gieseke <a href="https://orcid.org/0000-0002-1236-5109" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 4, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>In 2015 the legally binding <a href="https://unfccc.int/sites/default/files/resource/docs/2015/cop21/eng/10a01.pdf">Paris Agreement</a> included the overarching goals of holding</p>
+<blockquote class="blockquote">
+<p>“the increase in the global average temperature to well below 2 °C above pre-industrial levels and pursuing efforts to limit the temperature increase to 1.5 °C above pre-industrial levels, recognizing that this would significantly reduce the risks and impacts of climate change”.</p>
+</blockquote>
+<p>The question of which temperature level will be reached when is thus crucial. There exist a number of projects, reports from international organizations, as well as research papers aiming to answer the question what level of global temperature rise will be reached at the end of the century or how big the gap to scenarios consistent with temperature targets is. This is done under consideration of pledges and Nationally Determined Contributions (NDCs) of countries or analyzing currently implemented or planned policies, for example:</p>
+<ul>
+<li>the <a href="https://www.unep.org/resources/emissions-gap-report-2022">UNEP Emissions Gap Reporte</a> reports,</li>
+<li>the <a href="https://climateactiontracker.org/">Climate Action Tracker</a>,</li>
+<li>assessments published by the UNFCCC as <a href="https://unfccc.int/process-and-meetings/the-paris-agreement/nationally-determined-contributions-ndcs/ndc-synthesis-report/ndc-synthesis-report">NDC synthesis reports</a>, or</li>
+<li>the <a href="https://www.iea.org/reports/world-energy-outlook-2022">IEA</a>.</li>
+</ul>
+<p>The Remaining Carbon Budget approach is another widely used metric to track the progress, or rather non-progress, in keeping below the agreed temperature limits. It is most often reported as <span class="math inline">n</span> years remaining until the budget is used up and often depicted as a countdown clock, by media and research institutes alike.</p>
+<div id="fig-carbon-budgets" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 33.3%;justify-content: center;">
+<div id="fig-carbon-budget-mcc" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="mcc-countdown-clock.png" class="img-fluid figure-img" data-ref-parent="fig-carbon-budgets"></p>
+<figcaption class="figure-caption">(a) MCC Countdown Clock <a href="https://www.mcc-berlin.net/fileadmin/data/clock/carbon_clock.htm">(Screenshot from mcc-berlin.net)</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 33.3%;justify-content: center;">
+<div id="fig-carbon-budget-taz" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="taz-carbon-budget.png" class="img-fluid figure-img" data-ref-parent="fig-carbon-budgets"></p>
+<figcaption class="figure-caption">(b) taz Countdown Clock <a href="https://taz.de/Neue-CO2-Uhr-auf-tazde/!5810221/">(Screenshot from taz.de)</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 33.3%;justify-content: center;">
+<div id="fig-carbon-budget-igcc" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="climate-change-tracker-budget.png" class="img-fluid figure-img" data-ref-parent="fig-carbon-budgets"></p>
+<figcaption class="figure-caption">(c) IGCC/Climate Change Tracker <a href="https://climatechangetracker.org/igcc/current-remaining-carbon-budget-and-trajectory-till-exhaustion">(Screenshot from climatechangetracker.org)</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Carbon Budget Visualizations</figcaption><p></p>
+</figure>
+</div>
+<p>While the Budget approach is liked by NGOs and activists as it can be used to clearly define the remaining shares of countries, cities, or sectors and is also used in legislation, for example in the <a href="https://www.gov.uk/guidance/carbon-budgets">UK Carbon Budgets</a>, it has been criticized a lot. Changes in input or reference data, uncertainties in the climate response, and definitional issues have led Glen Peters to ask in <em>Beyond carbon budgets</em> whether the</p>
+<blockquote class="blockquote">
+<p>“carbon budget concept has perhaps served its purpose, time is short. To enact policy, a carbon budget is woefully too simplified.”</p>
+</blockquote>
+<p><span class="citation" data-cites="petersCarbonBudgets2018">(<a href="#ref-petersCarbonBudgets2018" role="doc-biblioref">Peters 2018</a>)</span></p>
+<p>Fully reproducible Remaining Carbon Budgets, which are required to disentangle the differences between reported budgets, have only recently become available, see for example <span class="citation" data-cites="nichollsImplicationsNonlinearitiesCumulative2020">(<a href="#ref-nichollsImplicationsNonlinearitiesCumulative2020" role="doc-biblioref">Nicholls et al. 2020</a>)</span> and the <a href="https://github.com/Rlamboll/AR6CarbonBudgetCalc">AR6 Carbon Budget Calculations on GitHub</a>.</p>
+<p>Despite efforts to improve the understanding and comparability of the Remaining Carbon Budget approach there remains confusion when updates are published. Recently, the <a href="https://www.igcc.earth/">Indicators of Global Climate Change</a> initiative included an update of the AR6 WGI budget, which shortened the time until the budget will be used up by about two years. Some media adopted their online trackers, for example the German daily <em>taz</em> (<a href="#fig-carbon-budget-taz">Figure&nbsp;1 (b)</a>), which before used the numbers based on the IPCC report from MCC (<a href="#fig-carbon-budget-mcc">Figure&nbsp;1 (a)</a>). The IGCC dashboard (see <a href="#fig-carbon-budget-igcc">Figure&nbsp;1 (c)</a>) includes a slider for the likelihood to stay under 1.5 °C and makes the implied assumption of future CO₂ emissions transparent, which is another communication challenge.</p>
+<p>Probably not obvious to most people discussing the Carbon Budget, but mentioned in the Climate Change Tracker explanation text and in the IGCC paper is that the year of the budget being exhausted is not necessarily the year when 1.5 °C is reached.</p>
+<blockquote class="blockquote">
+<p>“Note that the 50 % RCB is expected to be exhausted a few years before the 1.5 °C global warming level is reached due to the way it factors future warming from non-CO2 emissions into its estimate.”</p>
+</blockquote>
+<p><span class="citation" data-cites="forsterIndicatorsGlobalClimate2023">(<a href="#ref-forsterIndicatorsGlobalClimate2023" role="doc-biblioref">Forster et al. 2023</a>)</span></p>
+<p>For a deeper discussion of the <em>Opportunities and challenges in using remaining carbon budgets to guide climate policy</em> see also <span class="citation" data-cites="matthewsOpportunitiesChallengesUsing2020">Matthews et al. (<a href="#ref-matthewsOpportunitiesChallengesUsing2020" role="doc-biblioref">2020</a>)</span>.</p>
+<p>In contrast to the short term and rapidly shrinking Remaining Carbon Budgets are the assessments which report being on a pathway to <span class="math inline">n.m</span> °C at the end of the century. Often a distinction is made between pathways based on implemented policies, NDC pledges, or optimistic assumptions of full implementation of all net zero targets.</p>
+<p>The Climate Action Tracker is currently reporting 2.7 °C as its headline number for 2100, based on policies and actions, see <a href="#fig-cat">Figure&nbsp;2</a>.</p>
+<div id="fig-cat" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-cat-thermometer" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="CAT_2022-11_Graph_Thermometer_4Bars_Annotatio.width-1110.png" class="img-fluid figure-img" data-ref-parent="fig-cat"></p>
+<figcaption class="figure-caption">(a) <a href="https://climateactiontracker.org/global/cat-thermometer/">CAT Thermometer</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-cat-temperatures" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="CAT_2022-11_Graph_2100WarmingProjection.width-1110.png" class="img-fluid figure-img" data-ref-parent="fig-cat"></p>
+<figcaption class="figure-caption">(b) <a href="https://climateactiontracker.org/global/temperatures/">CAT 2100 Warming Projections</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: Climate Action Tracker assessment, November 2022 © 2009-2023 by Climate Analytics and NewClimate Institute</figcaption><p></p>
+</figure>
+</div>
+<p>The 2022 <a href="https://www.unep.org/resources/emissions-gap-report-2022">UNEP Gap Report</a> has 2.8°C with policies currently in place and the 2022 <a href="https://unfccc.int/documents/619180">UNFCC NDC Synthesis Report</a> summarizes:</p>
+<blockquote class="blockquote">
+<p>” The best estimate of peak temperature in the twenty-first century (projected mostly for 2100 when temperature continues to rise) is in the range of 2.1–2.9 °C depending on the underlying assumptions.”</p>
+</blockquote>
+<p>Most of these assessments don’t report the question when 1.5 or 2.0 °C will be reached. Underlying are a number of assumptions, especially for the extension until 2100 and its dependency on the underlying scenario databases. This makes it difficult to compare different assessments, for a detailed discussion see for example <span class="citation" data-cites="jefferyMeasuringSuccessImproving2018">Jeffery et al. (<a href="#ref-jefferyMeasuringSuccessImproving2018" role="doc-biblioref">2018</a>)</span> and <span class="citation" data-cites="gutschowExtendingNearTermEmissions2018">Gütschow et al. (<a href="#ref-gutschowExtendingNearTermEmissions2018" role="doc-biblioref">2018</a>)</span>. An overview of recent studies can be found in this 2022 <a href="https://data.climateresource.com.au/ndc/20221110-briefing/2022_Briefing_WarmingImplicationsNDCs_ClimateResource_FINAL.pdf">briefing paper</a> from Climate Resource.</p>
+<p>The public discourse is thus dominated by either a rapidly being used up budget (sometimes communicated with a faux accuracy of hundredths of seconds) or by a being on a rather deterministic sounding <em>pathway</em> to a temperature in 2100, when, using average global life expectancy, everybody currently alive and their children won’t be around anymore.</p>
+<p>I think that a different approach could amend these perspectives and be less reliant on scenario databases and their sometimes opaque assumptions on technologies or negative emissions. One could construct stylized scenarios, constant emissions, reductions or further increase in emissions and run these in the same way as scenarios based on NDCs or policies. The results could then be reported as follows:</p>
+<p><em>If we reduce emissions by n% per year, 1.5 °C will be reached between 20xx and 20yy.</em></p>
+<p><em>If emissions plateau for n years, we will reach a level of 1.5 °C in x years.</em></p>
+<p><em>If emissions keep rising at n% per year, the 2.0 °C limit will be breached between 20xx and 20yy.</em></p>
+<p>Aggregated NDCs could also be included, for example first follow an NDC trajectory and then decline or plateau.</p>
+<p>As a proof of concept I used the excellent <a href="https://climate-assessment.readthedocs.io/en/latest/">climate-assessment</a> package, used in the IPCC WG3 scenario assessment <span class="citation" data-cites="kikstraIPCCSixthAssessment2022a">(<a href="#ref-kikstraIPCCSixthAssessment2022a" role="doc-biblioref">Kikstra et al. 2022</a>)</span>. For testing the approach I constructed three basic scenarios with the main greenhouse gases. Starting from the historical emissions used in the <em>climate-assessment</em> package I extended them with the change rates as reported in the IGCC emissions update <span class="citation" data-cites="forsterIndicatorsGlobalClimate2023">(<a href="#ref-forsterIndicatorsGlobalClimate2023" role="doc-biblioref">Forster et al. 2023</a>)</span>. Next to a ‘persistence’ scenario with constant emissions, a continuous 5% reduction and 1% increase were considered as illustrative examples. Remaining greenhouse gases beyond CO₂, CH₄, N₂O, and other inputs and disaggregation of F-gases were infilled using <a href="https://silicone.readthedocs.io/en/latest/">Silicone</a> as included in the <em>climate-assessment</em> workflow.</p>
+<p><a href="#fig-scenario">Figure&nbsp;3</a> shows the stylized scenarios and their temperature response for the median and 33rd to 66th percentile range using the <a href="https://docs.fairmodel.net/en/latest/">FaIR</a> climate model.</p>
+<div id="fig-scenario" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-scenario-minus-5" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="minus-5.png" class="img-fluid figure-img" data-ref-parent="fig-scenario"></p>
+<figcaption class="figure-caption">(a) Stylized scenario with 5% reductions</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-scenario-persistence" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="persistence.png" class="img-fluid figure-img" data-ref-parent="fig-scenario"></p>
+<figcaption class="figure-caption">(b) Stylized scenario with constant emissions</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-scenario-plus-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="plus-1.png" class="img-fluid figure-img" data-ref-parent="fig-scenario"></p>
+<figcaption class="figure-caption">(c) Stylized scenario with 1% increase</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: Examples of stylized scenarios and their temperature response.</figcaption><p></p>
+</figure>
+</div>
+<p>This is of course only illustrative, many aspects need further thought and exploration:</p>
+<ul>
+<li>2022 (or soon 2023) emissions could also be used as a starting point,</li>
+<li>instead of percent reductions, one could use a more complex function to account for “hard-to-abate” and negative emissions (see discussion on Robbie Andrew’s <a href="https://folk.universitetetioslo.no/roberan/t/global_mitigation_curves.shtml">figure of the mitigation challenge</a>) or a simple linear pathway</li>
+<li>one could use specific lower bounds and reduction rates for different species</li>
+<li>all climate models available in <em>climate-assessment</em> or <a href="https://openscm-runner.readthedocs.io/en/latest/">OpenSCM</a> should be used</li>
+<li>the question of updates of historical emissions and (re-)calibration</li>
+</ul>
+<p>In general such a framework can also be used to analyze trade-offs between reduction rates for different species, like CO₂, CH₄, or F-Gases.</p>
+<p>In the example above I used the automatic infilling which is also something that needs further research. For the highly stylized scenarios it could make sense to extend all inputs in the same way or to use some other relationship from the literature or modelling. See <a href="#fig-infill">Figure&nbsp;4</a> for some examples of infilled inputs.</p>
+<div id="fig-infill" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-infill-sulfur" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="sulfur.png" class="img-fluid figure-img" data-ref-parent="fig-infill"></p>
+<figcaption class="figure-caption">(a) Infilled sulfur emissions</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-infill-sf6" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="sf6.png" class="img-fluid figure-img" data-ref-parent="fig-infill"></p>
+<figcaption class="figure-caption">(b) Infilled SF6 emissions</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: Infilled inputs for the stylized scenarios above.</figcaption><p></p>
+</figure>
+</div>
+<p>In any case, making such an assessment requires the collaboration and inputs from many researchers, a number of tools and datesets. This makes it perfect to become project <strong>Polyclimate1</strong>. I believe it could provide a useful addition to existing global projections and potentially be communicated more easily. A repository with the proof-of-concept notebooks used for creating and running the scenarios is available on <a href="https://github.com/polyclimate/polyclimate1">GitHub</a>.</p>
+<p>Leave your thought and comments below!</p>
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-forsterIndicatorsGlobalClimate2023" class="csl-entry" role="listitem">
+Forster, Piers M., Christopher J. Smith, Tristram Walsh, William F. Lamb, Robin Lamboll, Mathias Hauser, Aurélien Ribes, et al. 2023. <span>“Indicators of <span>Global Climate Change</span> 2022: Annual Update of Large-Scale Indicators of the State of the Climate System and Human Influence.”</span> <em>Earth System Science Data</em> 15 (6): 2295–2327. <a href="https://doi.org/10.5194/essd-15-2295-2023">https://doi.org/10.5194/essd-15-2295-2023</a>.
+</div>
+<div id="ref-gutschowExtendingNearTermEmissions2018" class="csl-entry" role="listitem">
+Gütschow, Johannes, Mairi Louise Jeffery, Michiel Schaeffer, and Bill Hare. 2018. <span>“Extending <span>Near-Term Emissions Scenarios</span> to <span>Assess Warming Implications</span> of <span>Paris Agreement NDCs</span>.”</span> <em>Earth’s Future</em> 6 (9): 1242–59. <a href="https://doi.org/10.1002/2017EF000781">https://doi.org/10.1002/2017EF000781</a>.
+</div>
+<div id="ref-jefferyMeasuringSuccessImproving2018" class="csl-entry" role="listitem">
+Jeffery, M. Louise, Johannes Gütschow, Marcia R. Rocha, and Robert Gieseke. 2018. <span>“Measuring <span>Success</span>: <span>Improving Assessments</span> of <span>Aggregate Greenhouse Gas Emissions Reduction Goals</span>.”</span> <em>Earth’s Future</em> 6 (9): 1260–74. <a href="https://doi.org/10.1029/2018EF000865">https://doi.org/10.1029/2018EF000865</a>.
+</div>
+<div id="ref-kikstraIPCCSixthAssessment2022a" class="csl-entry" role="listitem">
+Kikstra, Jarmo S., Zebedee R. J. Nicholls, Christopher J. Smith, Jared Lewis, Robin D. Lamboll, Edward Byers, Marit Sandstad, et al. 2022. <span>“The <span>IPCC Sixth Assessment Report WGIII</span> Climate Assessment of Mitigation Pathways: From Emissions to Global Temperatures.”</span> <em>Geoscientific Model Development</em> 15 (24): 9075–9109. <a href="https://doi.org/10.5194/gmd-15-9075-2022">https://doi.org/10.5194/gmd-15-9075-2022</a>.
+</div>
+<div id="ref-matthewsOpportunitiesChallengesUsing2020" class="csl-entry" role="listitem">
+Matthews, H. Damon, Katarzyna B. Tokarska, Zebedee R. J. Nicholls, Joeri Rogelj, Josep G. Canadell, Pierre Friedlingstein, Thomas L. Frölicher, et al. 2020. <span>“Opportunities and Challenges in Using Remaining Carbon Budgets to Guide Climate Policy.”</span> <em>Nature Geoscience</em> 13 (12, 12): 769–79. <a href="https://doi.org/10.1038/s41561-020-00663-3">https://doi.org/10.1038/s41561-020-00663-3</a>.
+</div>
+<div id="ref-nichollsImplicationsNonlinearitiesCumulative2020" class="csl-entry" role="listitem">
+Nicholls, Z. R. J., R. Gieseke, J. Lewis, A. Nauels, and M. Meinshausen. 2020. <span>“Implications of Non-Linearities Between Cumulative <span>CO2</span> Emissions and <span class="nocase">CO2-induced</span> Warming for Assessing the Remaining Carbon Budget.”</span> <em>Environmental Research Letters</em> 15 (7): 074017. <a href="https://doi.org/10.1088/1748-9326/ab83af">https://doi.org/10.1088/1748-9326/ab83af</a>.
+</div>
+<div id="ref-petersCarbonBudgets2018" class="csl-entry" role="listitem">
+Peters, Glen P. 2018. <span>“Beyond Carbon Budgets.”</span> <em>Nature Geoscience</em> 11 (6, 6): 378–80. <a href="https://doi.org/10.1038/s41561-018-0142-4">https://doi.org/10.1038/s41561-018-0142-4</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script src="https://giscus.app/client.js" data-repo="polyclimate/polyclimate.org" data-repo-id="R_kgDOJqJkWg" data-category="Announcements" data-category-id="DIC_kwDOJqJkWs4CW4d7" data-mapping="pathname" data-strict="1" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

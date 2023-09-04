@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/polyclimate-global-projections/index.html",
       "/posts/polyclimate-emissions/index.html",
       "/posts/announcing-project-polyclimate/index.html"
     ]
