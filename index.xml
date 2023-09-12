@@ -10,7 +10,133 @@
 <atom:link href="https://polyclimate.org/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Mon, 04 Sep 2023 10:20:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 12 Sep 2023 08:45:00 GMT</lastBuildDate>
+<item>
+  <title>New Scenarios</title>
+  <dc:creator>Robert Gieseke</dc:creator>
+  <link>https://polyclimate.org/posts/new-scenarios/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div id="fig-sketches" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-sketch-scenariomip" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://polyclimate.org/posts/new-scenarios/scenariomip-workshop-report-fig-1.png" class="img-fluid figure-img" data-ref-parent="fig-sketches"></p>
+<figcaption class="figure-caption">(a) Figure 1 from <span class="citation" data-cites="vanVuuren_2023_gsqcbg">Vuuren et al. (2023)</span> (CC-BY)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-sketch-gmd" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://polyclimate.org/posts/new-scenarios/gmd-2023-176-2a.png" class="img-fluid figure-img" data-ref-parent="fig-sketches"></p>
+<figcaption class="figure-caption">(b) Figure 2a from <span class="citation" data-cites="meinshausenPerspectiveNextGeneration2023">Meinshausen et al. (2023)</span> (CC-BY)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Illustrative emission pathway sketches in <span class="citation" data-cites="vanVuuren_2023_gsqcbg">Vuuren et al. (2023)</span> and <span class="citation" data-cites="meinshausenPerspectiveNextGeneration2023">Meinshausen et al. (2023)</span></figcaption><p></p>
+</figure>
+</div>
+<p>Last week a new paper and a new preprint on scenario creation and their assessment were published. First, a group effort with 41 co-authors: <em>A perspective on the next generation of Earth system model scenarios: towards representative emission pathways (REPs)</em> <span class="citation" data-cites="meinshausenPerspectiveNextGeneration2023">(Meinshausen et al. 2023)</span>. It’s open for review comments in GMD. The social media comments I saw so far where quite mixed. Some were apparently seeing this as a community split and invited to join the ScenarioMIP process, while the paper itself presents itself as a contribution to the ScenarioMIP effort.</p>
+<blockquote class="blockquote">
+<p>The initial June 2023 workshop discussions for the forthcoming ScenarioMIP protocol, at which this paper’s proposal was presented, also picks up some elements of this convergence of views (Figure 1 in van Vuuren et al., 2023).</p>
+</blockquote>
+<p>(p.&nbsp;25)</p>
+<blockquote class="blockquote">
+<p>Further considerations beyond those outlined here may inform the ongoing efforts of pathway design as part of CMIP, including ScenarioMIP (van Vuuren et al., 2023) and/or other model intercomparison projects (MIPs). We hope that our perspective can serve as an input into a strategic approach for driving ESMs with policy-relevant futures in this critical and contribute to further community reflections 805 on the next generation of framing pathways that we think will greatly benefit from an open and inclusive discussion given the far-reaching consequences for climate science and policy stemming from the scenario design.</p>
+</blockquote>
+<p>(p.&nbsp;31/32)</p>
+<p>Given that I started <a href="https://polyclimate.org/posts/announcing-project-polyclimate/">Polyclimate</a> as a place to think about how (some parts of) climate science could be done more in the open and collaboratively I find these discussions quite fascinating and look forward to a future study which analyses the social and political processes behind the scenario development.</p>
+<blockquote class="blockquote">
+<p>This paper has no official mandate. Doesn’t mean it’s not relevant but it’s not the CMIP endorsed activity.</p>
+</blockquote>
+<p><a href="https://twitter.com/PFriedling/status/1700181854438019578">Pierre Friedlingstein on Twitter</a></p>
+<p>It’s often hard to get review comments<sup>1</sup>, but the naming of their proposed scenarios is definitely something that will lead to comments. Whether there are emissions pathways that can be ruled out is still up for debate.</p>
+<blockquote class="blockquote">
+<p>“World Avoided” is a misleading name, which overstates progress in reducing emissions.</p>
+<p>If RCP 8.5 was never plausible then it’s only a world avoided in scenario modelers’ imaginations.</p>
+</blockquote>
+<p><a href="https://twitter.com/DoctorVive/status/1700243779897155753">Genevieve Guenther on Twitter</a></p>
+<p>Others were excited about both the “hypothetical” loss and damage scenario with emisssions reductions having started in 2015 and the high emissions scenarios.</p>
+<blockquote class="blockquote">
+<p>These two parallels universes: I want to know EVERYTHING about them</p>
+</blockquote>
+<p><a href="https://bsky.app/profile/ketanjoshi.co/post/3k6scqm5nm525">Ketan Joshi on Bluesky</a></p>
+<p>There is a a lot of literature which tries to assign historical emissions responsibility and the loss and damage debate will certainly be important in the next climate negotiations.</p>
+<blockquote class="blockquote">
+<p>I love the idea of a ‘what might have been’ scenario. So much of climate change has been politicians saying “Well, this all happened well before our tenure”, so it would be great to have something to point to and say “see how much less messed up it could have been if you’d done your jobs”.</p>
+</blockquote>
+<p><a href="https://bsky.app/profile/willemh.bsky.social/post/3k6seexqjqu25">Willem Huiskamp on Bluesky</a></p>
+<p>An important question then is of course how such a hypothetical scenario would look. 5% emissions reductions from 2015? 10%?</p>
+<p>Also interesting to note that a sketch in in the ScenarioMIP workshop report <span class="citation" data-cites="vanVuuren_2023_gsqcbg">(Vuuren et al. 2023)</span> has a question mark pathway in the area between ‘continued’ emissions and a below-2°C pathway, an area which is left empty in the REP sketch, see Figure&nbsp;1. The selection, design and naming of scenarios has many implications and there is not much time if things are to be ready for the second Global Stocktake in 2028.</p>
+<div id="fig-gmd-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://polyclimate.org/posts/new-scenarios/gmd-2023-176.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Potential timelines discussed in Fig. 3 of <span class="citation" data-cites="meinshausenPerspectiveNextGeneration2023">Meinshausen et al. (2023)</span> (CC-BY)</figcaption>
+</figure>
+</div>
+<p>Given the discussions on timelines and cut-off dates Figure&nbsp;2 for scenarios and their assessment feeding into the second Global Stocktake via a yet unknown AR7 product another paper published last week is also quite relevant: <em>AR6 scenarios database: an assessment of current practices and future recommendations</em> <span class="citation" data-cites="petersAR6ScenariosDatabase2023">(Peters et al. 2023)</span>.</p>
+<p>A critical assessment of the mitigation scenarios assessed in WG3 of the IPCC it calls for a “A new generation mitigation scenarios database” and for having the scenarios assessment be public during the assessment process instead of only after the final report publication.</p>
+<div id="fig-peters-ar6-projects" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://polyclimate.org/posts/new-scenarios/peters-ar6-projects.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Number of vetted scenarios from each project, (CC-BY <a href="https://twitter.com/Peters_Glen">@peters_glen</a>)</figcaption>
+</figure>
+</div>
+<p>From a description of the current process, an analysis of skewness in the distribution of submitted scenarios (dominated by a small number of models and projects, see Figure&nbsp;3) it makes several proposals. Quoting from a thread on Twitter<sup>2</sup>:</p>
+<blockquote class="blockquote">
+<ul>
+<li>A more active community in shaping research questions (e.g., not within closed EU projects)</li>
+<li>Shifting towards open &amp; peer-reviewed scenario protocols, to solicit more diverse feedback &amp; submissions</li>
+<li>A focus on openness, transparency, inclusion</li>
+<li>A living scenario database (instead of closed until publication as in the IPCC). Annual publications, like <a href="https://twitter.com/gcarbonproject">@gcarbonproject</a> , could routinely maintain, update, &amp; assess the database.</li>
+<li>Encourage the community to assess the database, not let the IPCC authors do it alone</li>
+<li>A strong institutional foundation is important, but a diversity of voices representing users &amp; different modelling approaches &amp; paradigms is essentials</li>
+</ul>
+</blockquote>
+<p><a href="https://twitter.com/Peters_Glen/status/1699732964689477892">(Glen Peters on Twitter)</a></p>
+<p>For the proposal of a living scenario database I believe the ingredients are already there. With the fantastic <em>climate-assessment</em> package <span class="citation" data-cites="kikstraIPCCSixthAssessment2022a">Kikstra et al. (2022)</span> have open-sourced the core climate assessment engine. A future living scenario database could built on this and be developed in the open on GitHub, along future improvements and updates to the assessment pipeline. With a total size of less than 350 MB for the global scenarios<sup>3</sup> the database could fit well below into the recommended limits of a GitHub repository of 1GB so there might be no need to maintain an actual database. If needed it could also be split up into sub-projects.</p>
+<p>Several approaches could be possible, for example submitting scenarios via Pull Requests to a central scenario DB repository, the assessment being handled by an automated pipeline using GitHub Actions writing back the results to the repository. A distributed, local approach might be another possibility, if the computing demands are to high to be handled by (free tier) GitHub Actions.</p>
+<p>Scenario developers would then have to run the pipeline locally and submit not only their input data but also the harmonized emissions and climate assessment to a central repository database. This approach might even be better for scenario developers (or done locally before submission anyways) and avoid surprises like re-classification due to infilling and harmonization. For example, they might have thought they submitted a below 1.5 scenario, but filling in emissions not covered in their model could push it into an overshoot one. During submission via Pull Requests automated checks could be performed like they are done in the current submission portal. Ideally, the submitted scenarios would directly be rendered into visualizations and be explorable on a website. Archiving could happen through the Zenodo integration with GitHub, so there would always be a citable reference of the latest version.</p>
+<p>Lots of possibilities and not much time. Leave your thoughts and comments below!</p>
+
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-kikstraIPCCSixthAssessment2022a" class="csl-entry">
+Kikstra, Jarmo S., Zebedee R. J. Nicholls, Christopher J. Smith, Jared Lewis, Robin D. Lamboll, Edward Byers, Marit Sandstad, et al. 2022. <span>“The <span>IPCC Sixth Assessment Report WGIII</span> Climate Assessment of Mitigation Pathways: From Emissions to Global Temperatures.”</span> <em>Geoscientific Model Development</em> 15 (24): 9075–9109. <a href="https://doi.org/10.5194/gmd-15-9075-2022">https://doi.org/10.5194/gmd-15-9075-2022</a>.
+</div>
+<div id="ref-meinshausenPerspectiveNextGeneration2023" class="csl-entry">
+Meinshausen, Malte, Carl-Friedrich Schleussner, Kathleen Beyer, Greg Bodeker, Olivier Boucher, Josep G. Canadell, John S. Daniel, et al. 2023. <span>“A Perspective on the Next Generation of <span>Earth</span> System Model Scenarios: Towards Representative Emission Pathways (<span>REPs</span>).”</span> <em>Geoscientific Model Development Discussions</em>, September, 1–40. <a href="https://doi.org/10.5194/gmd-2023-176">https://doi.org/10.5194/gmd-2023-176</a>.
+</div>
+<div id="ref-petersAR6ScenariosDatabase2023" class="csl-entry">
+Peters, Glen P., Alaa Al Khourdajie, Ida Sognnaes, and Benjamin M. Sanderson. 2023. <span>“<span>AR6</span> Scenarios Database: An Assessment of Current Practices and Future Recommendations.”</span> <em>Npj Climate Action</em> 2 (1, 1): 1–6. <a href="https://doi.org/10.1038/s44168-023-00050-9">https://doi.org/10.1038/s44168-023-00050-9</a>.
+</div>
+<div id="ref-vanVuuren_2023_gsqcbg" class="csl-entry">
+Vuuren, D. van, C. Tebaldi, B. C O’Neill, ScenarioMIP SSC, and Workshop Participants. 2023. <span>“ScenarioMIP Workshop: Pathway to Next Generation Scenarios for CMIP7.”</span> Zenodo. <a href="https://doi.org/10.5281/ZENODO.8186116">https://doi.org/10.5281/ZENODO.8186116</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Leave your thoughts and comments below!↩︎</p></li>
+<li id="fn2"><p>If the URL still says Twitter, I can still call the network Twitter, right?↩︎</p></li>
+<li id="fn3"><p>AR6_Scenarios_Database_World_v1.1.csv and AR6_Scenarios_Database_metadata_indicators_v1.1.xlsx↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>Polyclimate</category>
+  <category>Scenarios</category>
+  <guid>https://polyclimate.org/posts/new-scenarios/index.html</guid>
+  <pubDate>Tue, 12 Sep 2023 08:45:00 GMT</pubDate>
+  <media:content url="https://polyclimate.org/posts/new-scenarios/gmd-2023-176-2a.png" medium="image" type="image/png" height="121" width="144"/>
+</item>
 <item>
   <title>Polyclimate Global Projections</title>
   <dc:creator>Robert Gieseke</dc:creator>

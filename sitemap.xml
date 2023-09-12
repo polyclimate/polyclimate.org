@@ -2,22 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://polyclimate.org/about.html</loc>
-    <lastmod>2023-09-04T11:17:34.724Z</lastmod>
+    <lastmod>2023-09-12T08:52:04.641Z</lastmod>
   </url>
   <url>
-    <loc>https://polyclimate.org/posts/polyclimate-emissions/index.html</loc>
-    <lastmod>2023-09-04T11:17:33.396Z</lastmod>
-  </url>
-  <url>
-    <loc>https://polyclimate.org/index.html</loc>
-    <lastmod>2023-09-04T11:17:30.956Z</lastmod>
+    <loc>https://polyclimate.org/posts/new-scenarios/index.html</loc>
+    <lastmod>2023-09-12T08:52:03.337Z</lastmod>
   </url>
   <url>
     <loc>https://polyclimate.org/posts/announcing-project-polyclimate/index.html</loc>
-    <lastmod>2023-09-04T11:17:32.352Z</lastmod>
+    <lastmod>2023-09-12T08:52:01.413Z</lastmod>
+  </url>
+  <url>
+    <loc>https://polyclimate.org/index.html</loc>
+    <lastmod>2023-09-12T08:52:00.109Z</lastmod>
+  </url>
+  <url>
+    <loc>https://polyclimate.org/posts/polyclimate-emissions/index.html</loc>
+    <lastmod>2023-09-12T08:52:02.489Z</lastmod>
   </url>
   <url>
     <loc>https://polyclimate.org/posts/polyclimate-global-projections/index.html</loc>
-    <lastmod>2023-09-04T11:17:34.356Z</lastmod>
+    <lastmod>2023-09-12T08:52:04.273Z</lastmod>
   </url>
 </urlset>
